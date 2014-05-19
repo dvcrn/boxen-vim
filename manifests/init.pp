@@ -25,6 +25,7 @@ class vim {
   package { 'docutils':
     ensure   => installed,
     provider => pip,
+    require  => Package['python']
   }
 
   file { [$vimdir,

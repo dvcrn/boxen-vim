@@ -28,6 +28,11 @@ class vim {
     require  => Package['python']
   }
 
+  package { 'python':
+    provider => homebrew,
+    require  => Class['homebrew']
+  }
+
   file { [$vimdir,
     "${vimdir}/autoload",
     "${vimdir}/bundle"]:
